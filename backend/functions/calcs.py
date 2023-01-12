@@ -142,7 +142,7 @@ def api_call(ticker, daysTillStrike, premium, strikePrice):
     if missedProfit > 0:
 
         if missedProfit > premium:
-            return("Although you will earn money off of the premium, we predict that it may be more profitable to hold the stock instead as you would make $",missedProfit," per share, instead of $",premium,".")
+            return("Although you will earn money off of the premium, we predict that it may be more profitable to hold the stock instead as you would make $",missedProfit," per share, instead of $",premium," per share.")
         
         elif missedProfit == premium:
             return("We predict that the price of the stock will increase by the same amount as the premium by the Expiry Date.")
@@ -153,7 +153,7 @@ def api_call(ticker, daysTillStrike, premium, strikePrice):
 
 
     elif missedProfit == 0:
-        return("Great trade! We predict that the stock will be stagnant up until the Expiry Date and so you will make a profit of $",premium,".")
+        return("Great trade! We predict that the stock will be stagnant up until the Expiry Date and so you will make a profit of $",premium," per share.")
 
 
 
@@ -162,10 +162,10 @@ def api_call(ticker, daysTillStrike, premium, strikePrice):
         negProfit = premium + missedProfit
 
         if missedProfit > premium:
-            return("Although we predict that the stock price will go down by the expiry date, we still believe that you will make a profit off of this call of $",negProfit,".")
+            return("Although we predict that the stock price will go down by the expiry date, we still believe that you will make a profit off of this call of $",negProfit," per share.")
         
         elif missedProfit == premium:
             return("We predict that the price of the stock will decrease by the same amount as the premium by the Expiry Date. Therefore, although you will make a profit off of the premium, unless you intend to hold the stock in the long-term, it would probably be less stressful to sell and avoid this covered call.")
 
         else:
-            return("Stay away from this trade. Although we believe that the option will not be exercised, we predict that the price of the stock will fall by the expiry date to the point where your overall profit will be $",negProfit".")
+            return("Stay away from this trade. Although we believe that the option will not be exercised, we predict that the price of the stock will fall by the expiry date to the point where your overall profit will be $",negProfit," per share.")
