@@ -14,9 +14,9 @@ async def get_stock(ticker: str):
     return {"ticker": ticker}
 
 
-@app.get("/{ticker}")
-async def get_stock(ticker: str):
-    return {"Profit: ": api_call(ticker)}
+@app.get("/{ticker}/{daysTillStrike}/{premium}/{strikePrice}")
+async def get_stock(ticker: str, daysTillStrike: int, premium: float, strikePrice: float):
+    return {"Message: ": api_call(ticker, daysTillStrike, premium, strikePrice)}
 
 # Stock Ticker, Strike Price, Premium, men
 

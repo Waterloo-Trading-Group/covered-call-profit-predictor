@@ -1,4 +1,3 @@
-# Importing reuired libraries
 import yfinance as yf
 import math
 import numpy as np
@@ -71,8 +70,8 @@ def asset_std(values, meanReturn):
     std **= (1 / 2)
     return std
 
-def nominalInterestRate():
-    return daysTillStrike * ((1 + e) ^ (1 / daysTillStrike) - 1)
+def nominalInterestRate(daysTillStrike):
+    return daysTillStrike * ((1 + math.e) ^ (1 / daysTillStrike) - 1)
 
 
 def randomNormal(mean, std):
